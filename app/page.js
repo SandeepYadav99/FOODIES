@@ -1,9 +1,13 @@
+'use client'
 import Link from 'next/link';
 
 import classes from './page.module.css';
 import ImageSlideshow from './components/images/image-slideshow';
+import { usePathname } from 'next/navigation';
 
 export default function Home() {
+  const pathname = usePathname();
+  console.log(pathname)
   return (
     <>
       <header className={classes.header}>
@@ -16,8 +20,8 @@ export default function Home() {
             <p>Taste & share food from all over the world.</p>
           </div>
           <div className={classes.cta}>
-            <Link href="/community">Join the Community</Link>
-            <Link href="/meals">Explore Meals</Link>
+            <Link href="/community" className={pathname === "/community" ? classes.active : undefined}>Join the Community</Link>
+            <Link href="/meals" className={pathname === "/meals" ? classes.active : undefined}>Explore Meals</Link>
           </div>
         </div>
       </header>
