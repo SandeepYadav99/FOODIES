@@ -1,12 +1,9 @@
-
-import ImagePicker from '@/app/components/meals/image-picker';
-import classes from './page.module.css';
-import shareAction from '@/lib/actions';
-import MealFormSubmit from '@/app/components/meals/meal-form-submit';
+import ImagePicker from "@/app/components/meals/image-picker";
+import classes from "./page.module.css";
+import shareAction from "@/lib/actions";
+import MealFormSubmit from "@/app/components/meals/meal-form-submit";
 
 export default function ShareMealPage() {
- 
-
   return (
     <>
       <header className={classes.header}>
@@ -16,7 +13,7 @@ export default function ShareMealPage() {
         <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main className={classes.main}>
-        <form className={classes.form} action={shareAction} >
+        <form className={classes.form} action={shareAction}>
           <div className={classes.row}>
             <p>
               <label htmlFor="name">Your name</label>
@@ -46,7 +43,7 @@ export default function ShareMealPage() {
           </p>
           <ImagePicker label="Your image" name="image" />
           <p className={classes.actions}>
-          <MealFormSubmit/>
+            <MealFormSubmit />
           </p>
         </form>
       </main>
